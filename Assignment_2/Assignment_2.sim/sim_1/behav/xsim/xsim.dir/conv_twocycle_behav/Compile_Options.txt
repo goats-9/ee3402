@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "conv_twocycle_behav" "xil_defaultlib.conv_twocycle" -log "elaborate.log" 
