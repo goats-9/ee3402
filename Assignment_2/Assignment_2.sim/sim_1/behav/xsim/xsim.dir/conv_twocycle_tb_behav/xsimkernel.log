@@ -1,7 +1,4 @@
-Running: xsim.dir/conv_twocycle_tb_behav/xsimk.exe -simmode gui -wdb conv_twocycle_tb_behav.wdb -simrunnum 0 -socket 60400
+Running: xsim.dir/conv_twocycle_tb_behav/xsimk.exe -simmode gui -wdb conv_twocycle_tb_behav.wdb -simrunnum 0 -socket 51946
 Design successfully loaded
-Design Loading Memory Usage: 10764 KB (Peak: 10764 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 11452 KB (Peak: 11452 KB)
-Simulation CPU Usage: 15 ms
+Design Loading Memory Usage: 10752 KB (Peak: 10752 KB)
+Design Loading CPU Usage: 0 ms

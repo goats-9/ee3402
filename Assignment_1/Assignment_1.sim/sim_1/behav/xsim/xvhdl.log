@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/goats/Documents/repos/iith-coursework/ee/ee3402/Assignment_1/Assignment_1.srcs/sources_1/new/conv_highperf.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'conv_highperf'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/goats/Documents/repos/iith-coursework/ee/ee3402/Assignment_1/Assignment_1.srcs/sources_1/new/conv_highperf_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'conv_highperf_tb'
