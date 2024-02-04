@@ -1,14 +1,14 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Indian Institute of Techonology, Hyderabad
+-- Engineer: Gautam Singh 
 -- 
 -- Create Date: 31.01.2024 06:39:46
--- Design Name: 
--- Module Name: conv_highperf_tb - Behavioral
+-- Design Name: conv_mux_tb
+-- Module Name: conv_mux_tb - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
--- Description: 
+-- Description: Testbench for DUT conv_mux
 -- 
 -- Dependencies: 
 -- 

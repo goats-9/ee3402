@@ -4,12 +4,12 @@
 -- 
 -- Create Date: 30.01.2024 16:30:41
 -- Design Name: conv_highperf
--- Module Name: conv_highperf - Behavioral
--- Project Name: conv_highperf
+-- Module Name: conv_mux - Behavioral
+-- Project Name: conv_mux
 -- Target Devices: 
 -- Tool Versions: 
--- Description: Perform convolution with a kernel of size 10 by performing 
--- additions and multiplications in parallel.
+-- Description: Perform convolution with a kernel of size 10 having only two
+-- multipliers and an adder.
 -- Dependencies: 
 -- 
 -- Revision:

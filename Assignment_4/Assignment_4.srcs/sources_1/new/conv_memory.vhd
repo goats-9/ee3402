@@ -3,13 +3,13 @@
 -- Engineer: Gautam Singh
 -- 
 -- Create Date: 30.01.2024 16:30:41
--- Design Name: conv_highperf
--- Module Name: conv_highperf - Behavioral
--- Project Name: conv_highperf
+-- Design Name: conv_memory
+-- Module Name: conv_memory - Behavioral
+-- Project Name: conv_memory
 -- Target Devices: 
 -- Tool Versions: 
--- Description: Perform convolution with a kernel of size 10 by performing 
--- additions and multiplications in parallel.
+-- Description: Perform convolution with a kernel of size 10 without using
+-- multipliers or replacing multiplication with repeated or shifted addition.
 -- Dependencies: 
 -- 
 -- Revision:
