@@ -1,4 +1,2 @@
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/goats/Documents/repos/iith-coursework/ee/ee3402/Assignment_5/Assignment_5.srcs/sources_1/new/conv_nomem.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'conv_nomem'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/goats/Documents/repos/iith-coursework/ee/ee3402/Assignment_5/Assignment_5.srcs/sources_1/new/conv_nomem_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'conv_nomem_tb'

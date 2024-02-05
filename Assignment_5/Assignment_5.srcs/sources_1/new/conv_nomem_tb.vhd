@@ -50,7 +50,7 @@ architecture Behavioral of conv_nomem_tb is
     signal clk, reset: std_logic := '0';
     signal x : array_inputs(0 to 9);
     signal y : signed(3 downto 0);
-    constant clk_period: time := 1 ns;
+    constant clk_period: time := 10 ns;
 begin
     
     DUT: conv_nomem port map (
@@ -72,8 +72,16 @@ begin
     process
     begin
         reset <= '0';
+        -- y = 7
         x <= ( "0001", "0001", "0001", "0001", "0001", "0001", "0001", "0001", "0001", "0001" );
-        wait for 2 ns;
+        wait for 200 ns;
+        -- y = 9
+        x <= ( "0001", "0010", "0001", "0001", "0001", "0001", "0001", "0001", "0001", "0001" );
+        wait for 200 ns;
+        -- y = 11
+        x <= ( "0011", "0010", "0001", "0001", "0001", "0001", "0001", "0001", "0001", "0001" );
+        wait for 200 ns;
+        -- y = 0
         reset <= '1';
         wait;
     end process;

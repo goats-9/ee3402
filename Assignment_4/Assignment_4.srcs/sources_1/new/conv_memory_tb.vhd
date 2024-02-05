@@ -50,7 +50,7 @@ architecture Behavioral of conv_memory_tb is
     signal clk, reset: std_logic := '0';
     signal x : array_inputs(0 to 9);
     signal y : signed(3 downto 0);
-    constant clk_period: time := 1 ns;
+    constant clk_period: time := 10 ns;
 begin
     
     DUT: conv_memory port map (
@@ -73,7 +73,11 @@ begin
     begin
         reset <= '0';
         x <= ( "0001", "0001", "0001", "0001", "0001", "0001", "0001", "0001", "0001", "0001" );
-        wait for 2 ns;
+        wait for 50 ns;
+        x <= ( "0010", "0001", "0001", "0001", "0001", "0001", "0001", "0001", "0001", "0001" );
+        wait for 50 ns;
+        x <= ( "0010", "0010", "0010", "0001", "0001", "0001", "0001", "0001", "0001", "0001" );
+        wait for 50 ns;
         reset <= '1';
         wait;
     end process;

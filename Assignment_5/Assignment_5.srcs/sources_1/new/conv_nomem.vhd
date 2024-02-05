@@ -49,33 +49,96 @@ entity conv_nomem is
 end conv_nomem;
 
 architecture Behavioral of conv_nomem is
-    signal h : array_inputs(0 to num_inputs-1) := ("0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010");
 begin
     process(clk, reset, x)
-        variable acc, prod : signed(bit_width-1 downto 0);
-        variable carry : natural;
+        variable prod, acc : signed(bit_width-1 downto 0) := (others => '0');
+        variable cnt : natural := 0;
+        variable a, b, c, d : std_logic := '0';
     begin
         y <= (others => '0');
         if rising_edge(clk) and reset = '0' then
             acc := (others => '0');
-            for i in 0 to num_inputs-1 loop
-                -- Multiplication algorithm x(i)*h(i)
+            for cnt in 0 to num_inputs-1 loop
+                a := x(cnt)(3);
+                b := x(cnt)(2);
+                c := x(cnt)(1);
+                d := x(cnt)(0);
                 prod := (others => '0');
-                for j in 0 to bit_width-1 loop
-                    -- Maintain amount of carry
-                    carry := 0;
-                    for k in 0 to j loop
-                        if x(i)(k) = '1' and h(i)(j-k) = '1' then
-                            carry := carry + 1;
-                        end if;
-                    end loop;
-                    -- Units digit of carry
-                    if carry rem 2 = 1 then
-                        prod(j) := '1';
-                    end if;
-                    -- Shift carry right
-                    carry := carry / 2;
-                end loop;
+                case cnt is
+                    when 0 =>
+                        -- h0 = 1
+                        prod := x(0);
+                    when 1 =>
+                        -- h1 = 2;
+                        prod := (
+                            3 => b,
+                            2 => c,
+                            1 => d,
+                            others => '0'
+                        );
+                    when 2 =>
+                        -- h2 = 3;
+                        prod := (
+                            3 => (not a and b and not c) or (a and not b and not c) or (a and not b and not d) or (a and b and c) or (not a and not b and c and d),
+                            2 => (b and not c) or (b and d) or (not b and c and not d),
+                            1 => (not c and d) or (c and not d),
+                            0 => d
+                        );
+                    when 3 =>
+                        -- h3 = 4;
+                        prod := (
+                            3 => c,
+                            2 => d,
+                            others => '0'
+                        );
+                    when 4 =>
+                        -- h4 = 5;
+                        prod := (
+                            3 => (not a and not b and c) or (not a and c and not d) or (a and not b and not c) or (a and not c and not d) or (not a and b and not c and d) or (a and b and c and d),
+                            2 => (not b and d) or (b and not d),
+                            1 => c,
+                            0 => d
+                        );
+                    when 5 =>
+                        -- h5 = 6;
+                        prod := (
+                            3 => (b and not c) or (b and d) or (not b and c and not d),
+                            2 => (not c and d) or (c and not d),
+                            1 => d,
+                            others => '0'
+                        );
+                    when 6 =>
+                        -- h6 = 7;
+                        prod := (
+                            3 => (a and d) or (not a and c and not d) or (not a and b and not d) or (a and not b and not c), 
+                            2 => (not b and d) or (not b and c) or (b and c and not d),
+                            1 => (not c and d) or (c and not d),
+                            0 => d
+                        );
+                    when 7 =>
+                        -- h7 = 8;
+                        prod := (
+                            3 => d,
+                            others => '0'
+                        );
+                    when 8 =>
+                        -- h8 = 9;
+                        prod := (
+                            3 => (not a and d) or (a and not d),
+                            2 => b,
+                            1 => c,
+                            0 => d
+                        );
+                    when 9 =>
+                        -- h9 = 10;
+                        prod := (
+                            3 => (not b and d) or (b and not d),
+                            2 => c,
+                            1 => d,
+                            others => '0'
+                        );
+                    when others =>
+                end case;
                 acc := acc + prod;
             end loop;
             y <= acc;
