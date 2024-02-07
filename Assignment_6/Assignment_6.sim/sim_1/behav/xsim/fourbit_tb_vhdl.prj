@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Assignment_6.srcs/sources_1/new/fourbit.vhd" \
+"../../../../Assignment_6.srcs/sources_1/new/fourbit_tb.vhd" \
+
+# Do not sort compile order
+nosort
