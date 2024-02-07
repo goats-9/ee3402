@@ -1,24 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: Indian Institute of Techonology, Hyderabad
--- Engineer: Gautam Singh
--- 
--- Create Date: 30.01.2024 16:30:41
--- Design Name: conv_nomem
--- Module Name: conv_nomem - Behavioral
--- Project Name: conv_nomem
--- Target Devices: 
--- Tool Versions: 
--- Description: Perform convolution with a kernel of size 10 without using
--- multipliers, memory and repeated or shifted additions.
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

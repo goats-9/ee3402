@@ -1,24 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: Indian Institute of Techonology, Hyderabad
--- Engineer: Gautam Singh
--- 
--- Create Date: 31.01.2024 06:39:46
--- Design Name: 
--- Module Name: conv_nomem_tb - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -91,9 +70,9 @@ begin
         reset <= '1';
         wait for 100 ns;
         reset <= '0';
-        x <= "0000";
-        wait for clk_period;
         x <= "0001";
+        wait for clk_period;
+        x <= "0000";
         wait for clk_period;
         x <= "0010";
         wait for clk_period;
